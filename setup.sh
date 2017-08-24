@@ -26,7 +26,7 @@ for file in * .[^.]*; do
     if [ "$file" != "README.md" ] && [ "$file" != "setup.sh" ] && [ "$file" != ".git" ]; then
 
         if [ -d "$file" ]; then
-            cp -r "$scriptPath/$file" "$templateDir/$file"
+            cp -a "$scriptPath/$file/." "$templateDir/$file/"
         else
             cp "$scriptPath/$file" "$templateDir/$file"
         fi
