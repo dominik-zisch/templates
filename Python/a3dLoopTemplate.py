@@ -1,7 +1,5 @@
-#!/usr/bin/python
-
-# Version:      0.1
-# Last changed: 01/01/17
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
 
 import sys
 import signal
@@ -9,23 +7,24 @@ import time
 
 
 # ============================================================================//
-# ----------------------------------------------------------------------// Class
+# -----------------------------------------------------------// Global variables
 
-class ClassTemplate():
+# global variables go here
+# settings, etc.
 
-    def __init__( self, arg ):
-        self.arg = arg
+# -----------------------------------------------------------// Global variables
+# ----------------------------------------------------------------------------//
 
-    def start( self ):
-        print("Starting Class Template.")
 
-    def stop( self ):
-        print("Stopping Class Template.")
 
-    def do_something( self, topic, msg ):
-        print("Doing something.")
+# ============================================================================//
+# ------------------------------------------------------------// Local variables
 
-# ----------------------------------------------------------------------// Class
+# local variables go here
+# helper variables, etc.
+running = True
+
+# ------------------------------------------------------------// Local variables
 # ----------------------------------------------------------------------------//
 
 
@@ -45,29 +44,37 @@ def signal_handler( signal, frame ):
 
 
 # ============================================================================//
+# --------------------------------------------------------------------// Section
+
+# -----------------------------------------------/
+# ---/ Function description
+def do_something(arg1, arg2):
+    pass
+
+# --------------------------------------------------------------------// Section
+# ----------------------------------------------------------------------------//
+
+
+
+# ============================================================================//
 # ---------------------------------------------------------// Main program logic
 
-def main():
+if __name__ == '__main__':
 
-    # add signal handler for SIGINT
+    # register signal handler for Ctrl+C
     signal.signal( signal.SIGINT, signal_handler )
 
     # init stuff
     pass
 
     # main program loop
-    running = True
     while ( running ):
         pass
-        time.sleep( 0.1)
+        time.sleep( 0.1 )
 
     # cleanup
     print( 'Closing program!' )
     sys.exit( 0 )
-
-
-if __name__ == '__main__':
-    main()
 
 # ---------------------------------------------------------// Main program logic
 # ----------------------------------------------------------------------------//

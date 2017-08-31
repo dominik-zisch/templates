@@ -1,4 +1,8 @@
 #!/usr/bin/python
+# -*- coding: utf8 -*-
+
+# Version:      0.1
+# Last changed: 01/01/17
 
 import sys
 import signal
@@ -6,11 +10,23 @@ import time
 
 
 # ============================================================================//
-# --------------------------------------------------------------------// Globals
+# ----------------------------------------------------------------------// Class
 
-running = True
+class ClassTemplate():
 
-# --------------------------------------------------------------------// Globals
+    def __init__( self, arg ):
+        self.arg = arg
+
+    def start( self ):
+        print("Starting Class Template.")
+
+    def stop( self ):
+        print("Stopping Class Template.")
+
+    def do_something( self, topic, msg ):
+        print("Doing something.")
+
+# ----------------------------------------------------------------------// Class
 # ----------------------------------------------------------------------------//
 
 
@@ -33,17 +49,18 @@ def signal_handler( signal, frame ):
 # ---------------------------------------------------------// Main program logic
 
 def main():
-    global running
 
-    # register signal handler for Ctrl+C
+    # add signal handler for SIGINT
     signal.signal( signal.SIGINT, signal_handler )
 
     # init stuff
     pass
 
     # main program loop
+    running = True
     while ( running ):
-        time.sleep( 0.1 )
+        pass
+        time.sleep( 0.1)
 
     # cleanup
     print( 'Closing program!' )
